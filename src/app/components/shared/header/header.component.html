@@ -1,0 +1,62 @@
+<div class="header">
+  <div class="constraintWidth">
+    <div class="content">
+
+      <div class="leftside">
+        <a class="logo" href="/">
+          <img src="./../../../../assets/images/logo.png" alt="product hunt icon" height="40" width="40">
+        </a>
+        <a class="name" href="/">
+          <strong>Angular Hunt</strong>
+          <span>The best new angular products, every day</span>
+        </a>
+      </div>
+
+      <div class="container">
+        <form class="form" method="GET" action="/search/posts">
+          <label class="text">
+            <i class="ion-ios-search"></i>
+            <input autocomplete="off" class="input" data-test="search-input" name="q" placeholder="Discover your next favorite things..." value="">
+          </label>
+        </form>
+      </div>
+
+      <div class="rightside">
+        <a class="signup" [href]="formLink" target='_blank'>
+          <div class="buttoncontainer">Submit Your Project</div>
+        </a>
+        <span class="divider"></span>
+        <div class="login-buttons" *ngIf="!(user)">
+          <div class="signup" routerLink="/login">
+            <div class="buttoncontainer">LOG IN</div>
+          </div>
+        </div>
+
+        <div class="logged-in-user-area" *ngIf="user">
+          <app-profile-dropdown 
+            [user]="user"
+            (logoutClicked)="logout()">
+          </app-profile-dropdown>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-header">
+  <div class="mobile-content">
+    <form class="mobile-form" method="GET" action="/search/posts">
+      <label class="mobile-text">
+        <i class="ion-ios-search-strong"></i>
+        <!--<input autocomplete="off" class="input" data-test="search-input" name="q" placeholder="Discover your next favorite things..." value="">-->
+      </label>
+    </form>
+    <div class="mobile-logo">
+      <img src="./../../../../assets/images/logo.png" alt="product hunt icon" height="32" width="32">  
+    </div>
+    <div class="mobile-icon">
+      <i class="ion-ios-more-outline"></i>
+    </div>
+  </div>
+</div>
+<div>
